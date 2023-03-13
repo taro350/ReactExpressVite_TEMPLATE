@@ -1,28 +1,35 @@
 import { useState } from 'react'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Container from 'react-bootstrap/Container';
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <Container className="p-3">
+      <FormComp/>
+    </Container>
   )
 }
+
+function FormComp() {
+  return (
+    <>
+    <InputGroup className="mb-3">
+      <Form.Control
+        id="username"
+        placeholder="Recipient's username"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+      />
+      <Button variant="outline-secondary" id="loginbtn">
+        Button
+      </Button>
+    </InputGroup>
+    </>
+    )
+}
+
 
 export default App
